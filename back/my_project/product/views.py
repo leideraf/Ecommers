@@ -24,10 +24,10 @@ class ProductDetailViewByName(APIView):
         products = Product.objects.get(name=nombre)
         serializer = ProductSerializer(products, many = False)
         return Response(serializer.data, status=status.HTTP_200_OK)
-    
+
 class ProductCreateView(APIView):
 
-    permission_classes = [permissions.IsAdminUser]
+    #permission_classes = [permissions.IsAdminUser]
 
     def post(self, request):
         data = request.data
@@ -48,7 +48,7 @@ class ProductCreateView(APIView):
 
 class ProductEditView(APIView):
 
-    permission_classes = [permissions.IsAdminUser]
+    #permission_classes = [permissions.IsAdminUser]
 
     def put(self, request, pk):
         data = request.data
@@ -70,7 +70,7 @@ class ProductEditView(APIView):
 
 class ProductDeleteView(APIView):
 
-    permission_classes = [permissions.IsAdminUser]
+    #permission_classes = [permissions.IsAdminUser]
 
     def delete(self, request, pk):
         try:
@@ -79,3 +79,4 @@ class ProductDeleteView(APIView):
             return Response({"detail": "Product successfully deleted."}, status=status.HTTP_204_NO_CONTENT)
         except:
             return Response({"detail": "Product not found."}, status=status.HTTP_404_NOT_FOUND)
+

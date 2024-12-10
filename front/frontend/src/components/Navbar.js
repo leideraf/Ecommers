@@ -30,8 +30,8 @@ function NavBar() {
       >
         <img
           src={logo1}
-          width="190"
-          height="70"
+          width="200"
+          height="130"
           className="d-inline-block align-top"
           alt="Logo 3"
         />
